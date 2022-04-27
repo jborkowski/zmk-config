@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define SYM     2
-#define NUM     1
+#define SYM     1
+#define NUM     2
 #define NAV     3
 
 &mt {
@@ -82,25 +82,25 @@
    &trans    &hm LGUI A &hm LCTL R &hm LALT S   &hm LSHFT T  &kp G                                                         &kp K        &hm RSHFT N  &hm RALT E   &hm RCTL I   &hm RGUI O   &trans
    &trans    &kp Z      &kp X      &kp C        &kp D        &kp V        &trans     &trans          &trans     &trans     &kp M        &kp H        &kp COMMA    &kp DOT      &kp BSLH     &trans
 // +---------+----------+----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                   &trans       &trans       &kp SPC      &trans     &trans          &trans     &trans     &kp RET      &lt NUM      &trans
+                                   &trans       &lt SYM      &kp SPC      &trans     &trans          &trans     &trans     &kp RET      &lt NUM      &trans
 //                                 |            |            |            |          |         |     |          |          |            |            |            |
 //                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
       >;
     };
 
-  /*   sym_layer { */
-/*       bindings = < */
-/* // +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+ */
-/* // |        |          |           |            |            |            |                                                |            |            |            |            |            |         | */
-/*    &trans   &kp EXCL   &kp AT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                     &kp CARET    &kp AMPS     &kp STAR     &kp SEMI     &kp COLON    &trans */
-/*    &trans   &kp LCTRL  &kp LCTRL   &kp GRAVE    &kp APOS     &kp DQT                                                       &kp SQT      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans */
-/*    &trans   &trans     &trans      &trans       &kp UNDER    &trans       &trans     &trans          &trans     &trans     &trans       &trans       &trans       &trans       &kp DQT      &trans */
-/* // +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+ */
-/*                                    &trans       &trans       &trans       &trans     &trans          &trans     &trans     &trans       &lt NAV      &kp RALT */
-/* //                                 |            |            |            |          |         |     |          |          |            |            |            | */
-/* //                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+ */
-/*       >; */
-/*     }; */
+    sym_layer {
+      bindings = <
+// +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
+// |        |          |           |            |            |            |                                                |            |            |            |            |            |         |
+   &trans   &kp EXCL   &trans      &kp HASH     &kp DOLLAR   &kp PRCNT                                                     &kp CARET    &kp AMPS     &kp STAR     &kp SEMI     &kp COLON    &trans
+   &trans   &trans     &trans      &kp GRAVE    &trans       &trans                                                        &kp SQT      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
+   &trans   &trans     &trans      &trans       &kp UNDER    &trans       &trans     &trans          &trans     &trans     &trans       &trans       &trans       &trans       &kp DQT      &trans
+// +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
+                                   &trans       &trans       &trans       &trans     &trans          &trans     &trans     &trans       &lt NAV      &kp RALT
+//                                 |            |            |            |          |         |     |          |          |            |            |            |
+//                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
+      >;
+    };
 
     num_layer {
       bindings = <
@@ -110,7 +110,7 @@
    &trans    &kp ESC    &kp PIPE   &kp LBRC     &kp RBRC     &kp PLUS                                                      &kp EQUAL    &kp N4       &kp N5       &kp N6     &kp RET      &trans
    &trans    &kp GRAVE  &trans     &kp LBKT     &kp RBKT     &kp BSLH     &trans     &trans           &trans    &trans     &kp N0       &kp N1       &kp N2       &kp N3     &kp RBRC     &trans
 // +---------+----------+----------+------------+------------+------------+----------+----------+     +---------+----------+------------+------------+------------+----------+------------+---------+
-                                   &trans       &trans       &trans       &trans     &trans           &trans    &trans     &trans       &trans       &trans
+                                   &trans       &lt NAV      &trans       &trans     &trans           &trans    &trans     &trans       &trans       &trans
 //                                 |            |            |            |          |          |     |         |          |            |            |            |
 //                                 +------------+------------+------------+----------+----------+     +---------+----------+------------+------------+------------+
       >;
