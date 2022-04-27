@@ -13,6 +13,11 @@
 #define NUM     2
 #define NAV     3
 
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
+};
+
 / {
   combos {
 
@@ -71,57 +76,57 @@
 
     default_layer {
       bindings = <
-// +---------+----------+----------+------------+------------+------------+                                                    +------------+------------+------------+------------+------------+---------+
-// |         |          |          |            |            |            |                                                    |            |            |            |            |            |         |
-   &none     &kp Q      &kp W      &kp F        &kp P        &kp B                                                             &kp J        &kp L        &kp U        &kp Y        &kp BSPC     &none
-   &none     &hm LGUI A &hm LCTL R &hm LALT S   &hm LSHIFT T &kp G                                                             &kp K        &hm RSHIFT N &hm RALT E   &hm RCTL I   &hm RGUI O   &none
-   &none     &kp Z      &kp X      &kp C        &kp D        &kp V        &none      &none             &none        &none      &kp M        &kp H        &kp COMMA    &kp DOT      &kp BSLH     &none
-// +---------+----------+----------+------------+------------+------------+----------+-----------+     +------------+----------+------------+------------+------------+------------+------------+---------+
-                                   &none        &lt SYM      &kp SPC      &none      &none             &none        &none      &kp RET      &lt NUM      &none
-//                                 |            |            |            |          |           |     |            |          |            |            |            |
-//                                 +------------+------------+------------+----------+-----------+     +------------+----------+------------+------------+------------+
+// +---------+----------+----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
+// |         |          |          |            |            |            |                                                |            |            |            |            |            |         |
+   &trans    &kp Q      &kp W      &kp F        &kp P        &kp B                                                         &kp J        &kp L        &kp U        &kp Y        &kp BSPC     &none
+   &trans    &hm LGUI A &hm LCTL R &hm LALT S   &hm LSHFT T  &kp G                                                         &kp K        &hm RSHFT N  &hm RALT E   &hm RCTL I   &hm RGUI O   &trans
+   &trans    &kp Z      &kp X      &kp C        &kp D        &kp V        &trans     &trans          &trans     &trans     &kp M        &kp H        &kp COMMA    &kp DOT      &kp BSLH     &trans
+// +---------+----------+----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
+                                   &trans       &trans       &kp SPC      &trans     &trans          &trans     &trans     &kp RET      &lt NUM      &trans
+//                                 |            |            |            |          |         |     |          |          |            |            |            |
+//                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
       >;
     };
 
     sym_layer {
       bindings = <
-// +---------+----------+-----------+------------+------------+------------+                                                    +------------+------------+------------+------------+------------+---------+
-// |         |          |           |            |            |            |                                                    |            |            |            |            |            |         |
-   &trans    &kp EXCL   &kp AT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                         &kp CARET    &kp AMPS     &kp STAR     &kp SEMI     &kp COLON    &none
-   &trans    &kp LCTRL  &kp LCTRL   &kp GRAVE    &kp APOS     &kp DQT                                                           &kp SQT      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none
-   &trans    &trans     &trans      &trans       &kp UNDER    &trans       &none        &none             &trans     &trans     &none        &none        &none        &none        &kp DQT      &none
-// +---------+----------+-----------+------------+------------+------------+------------+-----------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                    &none        &trans       &none        &none        &none             &none      &none      &none        &lt NAV      &kp RALT
-//                                  |            |            |            |            |           |     |          |          |            |            |            |
-//                                  +------------+------------+------------+------------+-----------+     +----------+----------+------------+------------+------------+
+// +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
+// |        |          |           |            |            |            |                                                |            |            |            |            |            |         |
+   &trans   &kp EXCL   &kp AT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                     &kp CARET    &kp AMPS     &kp STAR     &kp SEMI     &kp COLON    &trans
+   &trans   &kp LCTRL  &kp LCTRL   &kp GRAVE    &kp APOS     &kp DQT                                                       &kp SQT      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &trans
+   &trans   &trans     &trans      &trans       &kp UNDER    &trans       &trans     &trans          &trans     &trans     &trans       &trans       &trans       &trans       &kp DQT      &trans
+// +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
+                                   &trans       &trans       &trans       &trans     &trans          &trans     &trans     &trans       &lt NAV      &kp RALT
+//                                 |            |            |            |          |         |     |          |          |            |            |            |
+//                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
       >;
     };
 
     num_layer {
       bindings = <
-// +---------+----------+------------+------------+------------+------------+                                                       +------------+----------+------------+----------+------------+----------+
-// |         |          |            |            |            |            |                                                       |            |          |            |          |            |          |
-   &none     &kp TAB    &kp TILDE    &kp LPAR     &kp RPAR     &kp UNDER                                                            &kp MINUS    &kp N7     &kp N8       &kp N9     &kp DOT      &none
-   &none     &kp ESC    &kp PIPE     &kp LBRC     &kp RBRC     &kp PLUS                                                             &kp EQUAL    &kp N4     &kp N5       &kp N6     &kp RET      &none
-   &none     &kp GRAVE  &none        &kp LBKT     &kp RBKT     &kp BSLH     &trans       &trans             &trans       &trans     &kp N0       &kp N1     &kp N2       &kp N3     &kp RBRC     &none
-// +---------+----------+------------+------------+------------+------------+------------+------------+     +------------+----------+------------+----------+------------+----------+------------+----------+
-                                     &none        &lt NAV      &none        &none        &none              &none        &none      &none        &trans     &trans
-//                                   |            |            |            |            |            |     |            |          |            |          |            |
-//                                   +------------+------------+------------+------------+------------+     +------------+----------+------------+----------+------------+
+// +---------+----------+----------+------------+------------+------------+                                                +------------+------------+------------+----------+------------+---------+
+// |         |          |          |            |            |            |                                                |            |            |            |          |            |         |
+   &trans    &kp TAB    &kp TILDE  &kp LPAR     &kp RPAR     &kp UNDER                                                     &kp MINUS    &kp N7       &kp N8       &kp N9     &kp DOT      &trans
+   &trans    &kp ESC    &kp PIPE   &kp LBRC     &kp RBRC     &kp PLUS                                                      &kp EQUAL    &kp N4       &kp N5       &kp N6     &kp RET      &trans
+   &trans    &kp GRAVE  &trans     &kp LBKT     &kp RBKT     &kp BSLH     &trans     &trans           &trans    &trans     &kp N0       &kp N1       &kp N2       &kp N3     &kp RBRC     &trans
+// +---------+----------+----------+------------+------------+------------+----------+----------+     +---------+----------+------------+------------+------------+----------+------------+---------+
+                                   &trans       &trans       &trans       &trans     &trans           &trans    &trans     &trans       &trans       &trans
+//                                 |            |            |            |          |          |     |         |          |            |            |            |
+//                                 +------------+------------+------------+----------+----------+     +---------+----------+------------+------------+------------+
       >;
     };
 
     nav_layer {
       bindings = <
-// +----------+----------+------------+------------+------------+------------+                                                       +------------+----------+------------+----------+------------+----------+
-// |          |          |            |            |            |            |                                                       |            |          |            |          |            |          |
-   &bt BT_PRV &kp F1     &kp F2       &kp F3       &kp F4       &kp F5                                                               &kp F6       &kp F7     &kp F8       &kp F9     &kp F10      &none
-   &bt BT_NXT &none      &none        &none        &none        &none                                                                &none        &none      &none        &kp F11    &kp F12      &none
-   &bt BT_CLR &none      &none        &none        &none        &none        &none        &none              &none       &none       &none        &none      &none        &none      &bootloader  &none
-// +----------+----------+------------+------------+------------+------------+------------+------------+     +-----------+-----------+------------+----------+------------+----------+------------+----------+
-                                      &trans       &trans       &trans       &trans       &trans             &trans      &trans      &trans       &trans     &trans
-//                                    |            |            |            |            |            |     |           |           |            |          |            |
-//                                    +------------+------------+------------+------------+------------+     +-----------+-----------+------------+----------+------------+
+// +----------+----------+----------+------------+------------+------------+                                               +------------+------------+------------+----------+------------+---------+
+// |          |          |          |            |            |            |                                               |            |            |            |          |            |         |
+   &bt BT_PRV &kp F1     &kp F2     &kp F3       &kp F4       &kp F5                                                       &kp F6       &kp F7       &kp F8       &kp F9     &kp F10      &trans
+   &bt BT_NXT &trans     &trans     &trans       &trans       &trans                                                       &trans       &trans       &trans       &kp F11    &kp F12      &trans
+   &bt BT_CLR &trans     &trans     &trans       &trans       &trans       &trans    &trans           &trans    &trans     &trans       &trans       &trans       &trans     &bootloader  &trans
+// +----------+----------+----------+------------+------------+------------+---------+----------+     +---------+----------+------------+------------+------------+----------+------------+---------+
+                                    &trans       &trans       &trans       &trans    &trans           &trans    &trans     &trans       &trans       &trans
+//                                  |            |            |            |         |          |     |         |          |            |            |            |
+//                                  +------------+------------+------------+---------+----------+     +---------+----------+------------+------------+------------+
       >;
     };
   };
