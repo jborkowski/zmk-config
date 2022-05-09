@@ -43,7 +43,7 @@
 // +---------+----------+------------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
 // |         |          |            |            |            |            |                                                |            |            |            |            |            |         |
    &none     &kp Q       &kp W       &kp F        &kp P        &kp B                                                         &kp J        &kp L        &kp U        &kp Y        &kp BSPC     &none
-   &none     &hm LGUI A  &hm LCTL R  &hm LALT S   &hm LSHFT T  &kp G                                                         &kp K        &hm RSHFT N  &hm RALT E   &hm RCTL I   &hm RGUI O   &none
+   &none     &hm LGUI A  &hm LALT R  &hm LCTL S   &hm LSHFT T  &kp G                                                         &kp K        &hm RSHFT N  &hm RCTL E   &hm RALT I   &hm RGUI O   &none
    &none     &kp Z       &kp X       &kp C        &kp D        &kp V        &none      &none           &none      &none      &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &none
 // +---------+----------+------------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
                                      &none        &trans       &mo LOWER    &kp SPC    &none           &none      &none      &mo RAISE    &kp RALT     &none
@@ -84,15 +84,15 @@
 
     adjust_layer {
       bindings = <
-// +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
-// |        |          |           |            |            |            |                                                |            |            |            |            |            |         |
-   &trans   &kp F1     &kp F2      &kp F3       &kp F4       &kp F5                                                        &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &trans
-   &trans   &trans     &trans      &trans       &trans       &trans                                                        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp F11      &kp F12      &trans
-   &trans   &trans     &trans      &trans       &trans       &trans       &trans    &trans           &trans    &trans      &bt BT_PRV   &bt BT_NXT   &bt BT_CLR   &trans       &trans       &trans
-// +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                    &trans       &trans       &trans       &trans    &trans           &trans    &trans     &trans       &trans       &trans
-//                                  |            |            |            |         |          |     |         |          |            |            |            |
-//                                  +------------+------------+------------+---------+----------+     +---------+----------+------------+------------+------------+
+// +--------+----------+-----------+------------+------------+------------+                                                +-------------+------------+------------+------------+------------+---------+
+// |        |          |           |            |            |            |                                                |             |            |            |            |            |         |
+   &trans   &none      &none       &none        &kp C_VOL_UP &kp C_VOL_DOWN                                                &kp C_BRI_INC &kp C_PREV   &kp C_NEXT   &none        &none        &trans
+   &trans   &trans     &trans      &trans       &trans       &trans                                                        &kp C_BRI_DEC &bt BT_SEL 0 &bt BT_SEL 1 &kp BT_SEL 2 &none        &trans
+   &trans   &C_PLAY    &trans      &trans       &trans       &trans       &trans    &trans           &trans    &trans      &none         &bt BT_PRV   &bt BT_NXT   &bt BT_CLR   &trans       &trans
+// +--------+----------+-----------+------------+------------+------------+----------+---------+     +---------+-----------+-------------+------------+------------+------------+------------+---------+
+                                   &trans       &trans       &trans       &trans    &trans           &trans    &trans      &trans        &trans       &trans
+//                                 |            |            |            |         |          |     |         |           |             |            |            |
+//                                 +------------+------------+------------+---------+----------+     +---------+-----------+-------------+------------+------------+
       >;
     };
   };
