@@ -102,7 +102,7 @@
 // |        |          |              |               |                |            |                                                |             |            |            |                 |            |         |
    &trans   &none      &none          &mmv MOVE_UP    &kp C_VOL_DN     &kp C_VOL_UP                                                  &kp C_BRI_INC &kp C_PREV   &kp C_NEXT   &mwh SCROLL_UP    &none        &trans
    &trans   &trans     &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                                                        &kp C_BRI_DEC &mkp LCLK    &mkp RCLK    &mwh SCROLL_DOWN  &none        &trans
-   &trans   &none      &kp C_PLAY     &trans          &trans           &trans       &trans     &trans          &trans    &trans      &none         &none        &bt BT_PRV   &bt BT_NXT   &bt BT_CLR        &trans
+   &trans   &none      &kp C_PLAY     &trans          &trans           &trans       &trans     &trans          &trans    &trans      &kp PSCRN     &none        &bt BT_PRV   &bt BT_NXT   &bt BT_CLR        &trans
 // +--------+----------+--------------+---------------+----------------+------------+----------+---------+     +---------+-----------+-------------+------------+------------+-----------------+------------+---------+
                                       &trans          &trans           &trans       &trans     &trans          &trans    &trans      &trans        &trans       &trans
 //                                    |               |                |            |          |         |     |         |           |             |            |            |
