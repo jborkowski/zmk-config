@@ -47,7 +47,7 @@
    &none     &hm LGUI A  &hm LALT R  &hm LCTL S   &hm LSHFT T  &kp G                                                         &kp K        &hm RSHFT N  &hm RCTL E   &hm RALT I   &hm RGUI O   &none
    &none     &kp Z       &kp X       &kp C        &kp D        &kp V        &none      &none           &none      &none      &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &none
 // +---------+----------+------------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                     &none        &trans       &mo LOWER    &kp SPC    &none           &none      &none      &mo RAISE    &kp RALT     &none
+                                     &none        &trans       &none        &mo LOWER  &kp SPC         &none      &mo RAISE  &kp RALT     &none        &none
 //                                   |            |            |            |          |         |     |          |          |            |            |            |
 //                                   +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
       >;
