@@ -40,11 +40,6 @@
 };
 
 / {
-   {
-     chosen {
-        zephyr,display = &oled;
-     };
-   };
    conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
