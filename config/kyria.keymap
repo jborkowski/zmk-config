@@ -15,8 +15,9 @@
 #define ADJUST  3
 
 &mmv {
-   time-to-max-speed-ms = <640>;
-   acceleration-exponent=<3>;
+   delay-ms = <0>;
+	time-to-max-speed-ms = <300>;
+   acceleration-exponent = <2>;
 };
 
 &pro_micro_i2c {
