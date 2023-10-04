@@ -11,9 +11,5 @@ manifest:
       remote: jborkowski
       revision: mouse-ftc
       import: app/west.yml
-    - name: zmk
-      remote: petejohanson
-      revision: core/zephyr-3.4-update
-      import: app/west.yml
   self:
     path: config
