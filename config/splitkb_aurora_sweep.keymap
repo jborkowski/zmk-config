@@ -14,6 +14,12 @@
 #define RAISE   2
 #define ADJUST  3
 
+
+#define U_CUT LS(DEL)
+#define U_CPY LC(INS)
+#define U_PST LS(INS)
+
+
 &mmv {
    delay-ms = <0>;
 	 time-to-max-speed-ms = <300>;
@@ -59,9 +65,9 @@
 // |          |            |            |            |            |                        |            |            |            |            |            |
    &kp Q       &kp W       &kp F        &kp P        &kp B                                 &kp J        &kp L        &kp U        &kp Y        &kp BSPC
    &hm LGUI A  &hm LALT R  &hm LCTL S   &hm LSHFT T  &kp G                                 &kp K        &hm RSHFT N  &hm RCTL E   &hm RALT I   &hm RGUI O
-   &kp Z       &kp X       &td LG(C) C  &kp D        &td LG(V) V                           &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH
+   &kp Z       &td U_CUT X &td U_CPY C  &kp D        &td U_PST V                           &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH
 // +----------+------------+------------+------------+------------+-------+      +---------+------------+------------+------------+------------+------------+
-                                                     &mo LOWER    &kp SPC        &mo RAISE &kp RALT     
+                                                     &mo LOWER    &kp SPC        &none     &mo RAISE   
 //                                                   |            |       |      |         |            |
 //                                                   +------------+-------+      +---------+------------+
       >;
