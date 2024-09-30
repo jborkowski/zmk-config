@@ -67,7 +67,7 @@
    &hm LGUI A  &hm LALT R  &hm LCTL S   &hm LSHFT T  &kp G                                 &kp K        &hm RSHFT N  &hm RCTL E   &hm RALT I   &hm RGUI O
    &kp Z       &td U_CUT X &td U_CPY C  &kp D        &td U_PST V                           &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH
 // +----------+------------+------------+------------+------------+-------+      +---------+------------+------------+------------+------------+------------+
-                                                     &mo LOWER    &kp SPC        &none     &mo RAISE   
+                                                     &mo LOWER    &kp SPC        &kp ESC   &mo RAISE   
 //                                                   |            |       |      |         |            |
 //                                                   +------------+-------+      +---------+------------+
       >;
