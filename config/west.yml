@@ -2,14 +2,13 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
-    - name: jborkowski
-      url-base: https://github.com/jborkowski
+    - name: alternateved
+      url-base: https://github.com/alternateved
   projects:
     - name: zmk
-      remote: jborkowski
-      revision: mouse-ftc
+      remote: alternateved
+      revision: dev
       import: app/west.yml
   self:
     path: config
+
