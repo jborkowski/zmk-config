@@ -18,6 +18,7 @@
 #define U_PST LS(INS)
 
 #include "mouse.dtsi"
+import "behaviors.dtsi"
 
 / {
    conditional_layers {
@@ -28,27 +29,6 @@
         };
     };
 
-  behaviors {
-    hm: homerow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
-      #binding-cells = <2>;
-      tapping-term-ms = <160>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-    td: tapdance {
-      compatible = "zmk,behavior-hold-tap";
-      label = "TAPDANCE";
-      #binding-cells = <2>;
-      tapping-term-ms = <150>;
-      quick_tap_ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-  };
-
   keymap {
     compatible = "zmk,keymap";
 
@@ -57,7 +37,7 @@
 // +----------+------------+------------+------------+------------+                        +------------+------------+------------+------------+------------+
 // |          |            |            |            |            |                        |            |            |            |            |            |
    &kp Q       &kp W       &kp F        &kp P        &kp B                                 &kp J        &kp L        &kp U        &kp Y        &kp BSPC
-   &hm LGUI A  &hm LALT R  &hm LCTL S   &hm LSHFT T  &kp G                                 &kp K        &hm RSHFT N  &hm RCTL E   &hm RALT I   &hm RGUI O
+   &hm_0 LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G                         &kp K        &hm_i RSHFT N  &hm_m RCTL E   &hm_o RALT I   &hm_o RGUI O
    &kp Z       &td U_CUT X &td U_CPY C  &kp D        &td U_PST V                           &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH
 // +----------+------------+------------+------------+------------+-------+      +---------+------------+------------+------------+------------+------------+
                                                      &mo LOWER    &kp SPC        &kp ESC   &mo RAISE   
