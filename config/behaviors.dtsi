@@ -21,9 +21,8 @@
         #sensor-binding-cells = <0>;
         bindings = <&none>, <&none>;
      };
-   };
 
-   td: tapdance {
+    td: tapdance {
       compatible = "zmk,behavior-hold-tap";
       label = "TAPDANCE";
       #binding-cells = <2>;
@@ -32,4 +31,6 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+  };
+
 };

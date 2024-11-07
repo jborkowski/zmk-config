@@ -20,7 +20,7 @@
 #include "mouse.dtsi"
 import "behaviors.dtsi"
 
-{
+/ {
    conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
