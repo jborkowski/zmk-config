@@ -18,7 +18,8 @@
 #define U_PST LS(INS)
 
 #include "mouse.dtsi"
-import "behaviors.dtsi"
+#include "behaviors.dtsi"
+
 
 / {
    conditional_layers {

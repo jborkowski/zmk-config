@@ -8,21 +8,18 @@
       bindings        = <&kp>, <&kp>; \
       __VA_ARGS__ \
   };
+
 &lt {
   tapping-term-ms = <135>;
 };
+
 / {
   behaviors {
     HOLD_TAP(hm_o, tap-preferred, 150)
     HOLD_TAP(hm_m, tap-preferred, 140)
     HOLD_TAP(hm_i, tap-preferred, 130)
-     disabled_encoder: disabled_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&none>, <&none>;
-     };
 
-    td: tapdance {
+   td: tapdance {
       compatible = "zmk,behavior-hold-tap";
       label = "TAPDANCE";
       #binding-cells = <2>;
@@ -32,5 +29,5 @@
       bindings = <&kp>, <&kp>;
     };
   };
-
 };
+
