@@ -2,12 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: alternateved
-      url-base: https://github.com/alternateved
   projects:
     - name: zmk
-      remote: alternateved
-      revision: dev
       import: app/west.yml
   self:
     path: config
