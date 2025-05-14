@@ -45,7 +45,7 @@
     COMBO(btclr,  &bt BT_CLR,    RB2 RB3,     FUN,          100, 200)
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
-    /* COMBO(mouse,  &tog MSE,      LB3 LB2 LB1, DEF BRD MSE, 100, 100) */
+    COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
 
     #ifdef EXTRA_COMBOS 
       /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
@@ -55,7 +55,7 @@
 
       /* COMBO(sqt,    &kp SQT,       RT1 RT2,     DEF BRD SYM,  40, 100) */
       /* COMBO(grave,  &kp GRAVE,     RT2 RT3,     DEF BRD SYM,  40, 100) */
-           /* COMBO(semi,   &kp SEMI,    RB1 RB2 RB3, DEF BRD SYM,  40, 100) */
+           /* COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF BRD SYM,  40, 100) */
       /* COMBO(lpar,   &kp LPAR,      LM3 LM1,     DEF BRD SYM,  40, 100) */
       /* COMBO(rpar,   &kp RPAR,      RM1 RM3,     DEF BRD SYM,  40, 100) */
       /* COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF BRD SYM,  40, 100) */
