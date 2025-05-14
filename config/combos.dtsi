@@ -38,7 +38,7 @@
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
-    COMBO(mouse_layer, &mo MOUSE, LH1 RH1, DEF MOUSE,    100, 100)
+    COMBO(mouse_layer, &mo MOUSE, LH1 RH1, DEF MOUSE NAV NUM,    100, 100)
     COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF SYM,     40, 100)
     COMBO(colon,  &kp COLON,     RT3 RT4,     DEF SYM,     40, 100)
     #endif
