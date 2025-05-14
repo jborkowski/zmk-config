@@ -15,6 +15,8 @@
 #include "combos.dtsi"
 #include "macros.dtsi"
 
+#define BERYLLINE
+
 / {
 
 /*   30 KEY MATRIX / LAYOUT MAPPING
@@ -42,10 +44,9 @@
       display-name = "DEF";
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
-      &hml LGUI A  &hml LALT R  &hml LCTL S   &hml LSHFT T  &kp G            &kp K         &hmr RSHFT N  &hmr RCTL E   &hmr LALT I     &hmr RGUI O 
+      &hml LGUI A   &hml LALT R  &hml LCTL S     &hml LSHFT T   &kp G            &kp K         &hmr RSHFT N   &hmr RCTL E    &hmr LALT I      &hmr RGUI O 
                     &hml RALT X  &hml U_CPY C    &kp D                                         &kp COMMA      &kp DOT        &hmr RALT APOS
                                                  &lt MOUSE TAB  &lt NAV SPC      &lt SYM ESC   &lt NUM RET
-                                                 
       >;
     };
 

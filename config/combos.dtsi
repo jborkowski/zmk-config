@@ -19,19 +19,6 @@
 / {
   combos {
     compatible = "zmk,combos";
-
-    #ifdef THUMB_COMBOS
-      /* COMBO(thumb_esc, &lt 3 ESC, 30 31, DEF, COMBO_TERM_SLOW) */
-      /* COMBO(thumb_del, &lt 6 DEL, 32 33, DEF, COMBO_TERM_SLOW) */
-      /* COMBO(nav_del, &kp DEL, 32 33, NAV, COMBO_TERM_SLOW) */
-      /* COMBO(media_mute, &kp C_MUTE, 32 33, MEDIA, COMBO_TERM_SLOW) */
-      /* COMBO(mouse_bt3, &mkp MB3, 32 33, MOUSE, COMBO_TERM_SLOW) */
-      /* COMBO(num_dot, &kp DOT, 30 31, NUM, COMBO_TERM_SLOW) */
-      /* COMBO(sym_lpar, &kp LPAR, 30 31, SYM, COMBO_TERM_SLOW) */
-      /* COMBO(fun_app, &kp K_APP, 30 31, FUN, COMBO_TERM_SLOW) */
-    #endif
-
-
     COMBO(q,      &kp Q,         LT3 LT2,     DEF,          80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF,          80,  50)
     COMBO(v,      &kp V,         LB2 LB1,     DEF,          40,  50)
@@ -48,7 +35,6 @@
 
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
 
-    #ifdef EXTRA_COMBOS 
       /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
       /* COMBO(bspc,   &kp BSPC,      RM1 RM2,     DEF BRD SYM,  40, 100) */
       /* COMBO(esc,    &kp ESC,       LM3 LM2 LM1, DEF BRD SYM,  40,   0) */
@@ -77,11 +63,6 @@
 
       /* COMBO(indbat, &ind_bat,      LT2 RT2,     FUN,         100, 200) */
       /* COMBO(indcon, &ind_con,      LT1 RT1,     FUN,         100, 200) */
-
-
-    #endif
-
-   
     
   };
 };
