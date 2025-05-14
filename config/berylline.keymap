@@ -25,6 +25,16 @@
             20  21  22             23  24  25
                     26  27     28  29              */
 
+
+  cond_layers {
+      compatible = "zmk,conditional-layers";
+
+      func_tristate {
+          if-layers = <NAV SYM>;
+          then-layer = <FUN>;
+      };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
