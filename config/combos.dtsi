@@ -18,7 +18,12 @@
 
 / {
   combos {
+
+
     compatible = "zmk,combos";
+
+
+    #ifdef BERYLLINE
     COMBO(q,      &kp Q,         LT3 LT2,     DEF,          80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF,          80,  50)
     COMBO(v,      &kp V,         LB2 LB1,     DEF,          40,  50)
@@ -33,10 +38,13 @@
     COMBO(btclr_all,  &bt BT_CLR_ALL,   RB1 RB2 RB3,   DEF,          100, 200)
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
-    COMBO(studiounlock, &studio_unlock,   RT0 RT1 RT2,     DEF,          100, 500) 
-
-
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
+
+    #endif
+    
+    #ifdef KYRIA
+    COMBO(studiounlock, &studio_unlock,   RT0 RT1 RT2,     DEF,          100, 500) 
+    #endif
 
       /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
       /* COMBO(bspc,   &kp BSPC,      RM1 RM2,     DEF BRD SYM,  40, 100) */
