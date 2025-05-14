@@ -33,6 +33,9 @@
     COMBO(btclr_all,  &bt BT_CLR_ALL,   RB1 RB2 RB3,   DEF,          100, 200)
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
+    COMBO(studiounlock, &studio_unlock,   RT0 RT1 RT2,     DEF,          100, 500) 
+
+
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
 
       /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
