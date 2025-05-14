@@ -1,10 +1,22 @@
-#define COMBO(NAME, BINDINGS, POSITIONS, LAYERS, TIMEOUT) \
-  combo_##NAME { \
-    bindings = <BINDINGS>; \
-    key-positions = <POSITIONS>; \
-    layers = <LAYERS>; \
-    timeout-ms = <TIMEOUT>; \
-  };
+/* KEY POSITIONS (using keypos_def helpers)
+╭─────────────────────┬─────────────────────╮
+│ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
+│ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
+│ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
+╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
+        ╰─────────────┴─────────────╯       */
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP, ...) \
+    combo_##NAME { \
+        timeout-ms = <TERM>; \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        layers = <LAYERS>; \
+        require-prior-idle-ms = <QUICKTAP>; \
+        __VA_ARGS__ \
+    };
+
+/ 
 
 #define COMBO_TERM_FAST 20
 #define COMBO_TERM_SLOW 200
@@ -14,68 +26,64 @@
     compatible = "zmk,combos";
 
     #ifdef THUMB_COMBOS
-      COMBO(thumb_esc, &lt 3 ESC, 30 31, DEF, COMBO_TERM_SLOW)
-      COMBO(thumb_del, &lt 6 DEL, 32 33, DEF, COMBO_TERM_SLOW)
-      COMBO(nav_del, &kp DEL, 32 33, NAV, COMBO_TERM_SLOW)
-      COMBO(media_mute, &kp C_MUTE, 32 33, MEDIA, COMBO_TERM_SLOW)
-      COMBO(mouse_bt3, &mkp MB3, 32 33, MOUSE, COMBO_TERM_SLOW)
-      COMBO(num_dot, &kp DOT, 30 31, NUM, COMBO_TERM_SLOW)
-      COMBO(sym_lpar, &kp LPAR, 30 31, SYM, COMBO_TERM_SLOW)
-      COMBO(fun_app, &kp K_APP, 30 31, FUN, COMBO_TERM_SLOW)
+      /* COMBO(thumb_esc, &lt 3 ESC, 30 31, DEF, COMBO_TERM_SLOW) */
+      /* COMBO(thumb_del, &lt 6 DEL, 32 33, DEF, COMBO_TERM_SLOW) */
+      /* COMBO(nav_del, &kp DEL, 32 33, NAV, COMBO_TERM_SLOW) */
+      /* COMBO(media_mute, &kp C_MUTE, 32 33, MEDIA, COMBO_TERM_SLOW) */
+      /* COMBO(mouse_bt3, &mkp MB3, 32 33, MOUSE, COMBO_TERM_SLOW) */
+      /* COMBO(num_dot, &kp DOT, 30 31, NUM, COMBO_TERM_SLOW) */
+      /* COMBO(sym_lpar, &kp LPAR, 30 31, SYM, COMBO_TERM_SLOW) */
+      /* COMBO(fun_app, &kp K_APP, 30 31, FUN, COMBO_TERM_SLOW) */
     #endif
 
-    #ifdef BOTTOM_COMBOS
-      COMBO(def_rep, &key_repeat, 21 22, DEF NAV MOUSE NUM SYM, COMBO_TERM_FAST)
-      COMBO(def_emb, &embark, 27 28, DEF NAV MOUSE NUM SYM, COMBO_TERM_FAST)
+
+    COMBO(q,      &kp Q,         LT3 LT2,     DEF,          80,  50)
+    COMBO(j,      &kp J,         LT2 LT1,     DEF,          80,  50)
+    COMBO(v,      &kp V,         LB2 LB1,     DEF,          40,  50)
+    COMBO(q,      &kp Q,         LT2 LT1,     DEF,          80,  50)
+    COMBO(v,      &kp V,         LT3 LT2,     DEF,          80,  50)
+    COMBO(z,      &kp Z,         LB3 LB2,     DEF,          80,  50)
+
+    /* COMBO(mouse,  &tog MSE,      LB3 LB2 LB1, DEF BRD MSE, 100, 100) */
+
+    #ifdef EXTRA_COMBOS 
+      /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
+      /* COMBO(bspc,   &kp BSPC,      RM1 RM2,     DEF BRD SYM,  40, 100) */
+      /* COMBO(esc,    &kp ESC,       LM3 LM2 LM1, DEF BRD SYM,  40,   0) */
+      /* COMBO(ret,    &kp RET,       RM1 RM2 RM3, DEF BRD SYM,  40,   0) */
+
+      /* COMBO(sqt,    &kp SQT,       RT1 RT2,     DEF BRD SYM,  40, 100) */
+      /* COMBO(grave,  &kp GRAVE,     RT2 RT3,     DEF BRD SYM,  40, 100) */
+      /* COMBO(bslh,   &kp BSLH,      RB1 RB2,     DEF BRD SYM,  40, 100) */
+      /* COMBO(slsh,   &kp SLASH,     RB2 RB3,     DEF BRD SYM,  40,  50) */
+      /* COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF BRD SYM,  40, 100) */
+      /* COMBO(lpar,   &kp LPAR,      LM3 LM1,     DEF BRD SYM,  40, 100) */
+      /* COMBO(rpar,   &kp RPAR,      RM1 RM3,     DEF BRD SYM,  40, 100) */
+      /* COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF BRD SYM,  40, 100) */
+      /* COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF BRD SYM,  40, 100) */
+
+      /* COMBO(excl,   &kp EXCL,      LT2 LT1,     SYM,          40, 100) */
+
+
+      /* COMBO(capswd, &caps_word,    LM1 RM1,     DEF BRD,      60, 200) */
+      /* COMBO(lock,   &kp LG(L),     LT1 LT0,     DEF BRD,      80, 500) */
+
+      /* COMBO(winq,   &kp LA(F4),    LT3 LT2,     NAV,          80, 200) */
+      /* COMBO(undo,   &kp LC(Z),     LB3 LB2,     NAV,          80,  50) */
+
+      /* COMBO(play,   &kp C_PP,      LT0 LM0,     NAV,         200, 200) */
+      /* COMBO(calc,   &kp C_AL_CALC, RT0 RM0,     NAV,         200, 200) */
+
+      /* COMBO(btclr,  &bt BT_CLR,    RB2 RB3,     FUN,         100, 200) */
+
+      /* COMBO(indbat, &ind_bat,      LT2 RT2,     FUN,         100, 200) */
+      /* COMBO(indcon, &ind_con,      LT1 RT1,     FUN,         100, 200) */
+
+      /* COMBO(bootld, &bootloader,   LT0 RT0,     FUN,         100, 500) */
+
     #endif
 
-    #ifdef BOTTOM_COMBOS_KYRIA
-      COMBO(def_rep, &key_repeat, 21 22, DEF NAV MOUSE NUM SYM, COMBO_TERM_FAST)
-      COMBO(def_emb, &embark, 31 32, DEF NAV MOUSE NUM SYM, COMBO_TERM_FAST)
-    #endif
-
-    #ifdef BERYLLINE_COMBOS
-      COMBO(bottom_x, &lt BUT X, 20 21, DEF, COMBO_TERM_FAST)
-      COMBO(bottom_v, &kp V, 21 22, DEF, COMBO_TERM_FAST)
-
-      COMBO(bottom_k, &kp Q, 23 24, DEF, COMBO_TERM_FAST)
-      COMBO(bottom_fslh, &lt BUT FSLH, 24 25, DEF, COMBO_TERM_FAST)
-
-      COMBO(nav_n_lo, &none, 20 21, NAV, COMBO_TERM_FAST)
-      COMBO(nav_n_li, &none, 21 22, NAV, COMBO_TERM_FAST)
-      COMBO(nav_home, &kp HOME, 23 24, NAV, COMBO_TERM_FAST)
-      COMBO(nav_ins, &kp INS, 24 25, NAV, COMBO_TERM_FAST)
-
-      COMBO(mouse_n_lo, &none, 20 21, MOUSE, COMBO_TERM_FAST)
-      COMBO(mouse_n_li, &none, 21 22, MOUSE, COMBO_TERM_FAST)
-      COMBO(mouse_mscl, &msc SCRL_LEFT, 23 24, MOUSE, COMBO_TERM_FAST)
-      COMBO(mouse_n_ro, &none, 24 25, MOUSE, COMBO_TERM_FAST)
-
-      COMBO(media_n_lo, &none, 20 21, MEDIA, COMBO_TERM_FAST)
-      COMBO(media_n_li, &none, 21 22, MEDIA, COMBO_TERM_FAST)
-      COMBO(media_pscrn, &kp LS(PSCRN), 23 24, MEDIA, COMBO_TERM_FAST)
-      COMBO(media_n_ro, &none, 24 25, MEDIA, COMBO_TERM_FAST)
-
-      COMBO(num_grave, &kp GRAVE, 20 21, NUM, COMBO_TERM_FAST)
-      COMBO(num_bslh, &kp BSLH, 21 22, NUM, COMBO_TERM_FAST)
-      COMBO(num_n_ri, &none, 23 24, NUM, COMBO_TERM_FAST)
-      COMBO(num_n_ro, &none, 24 25, NUM, COMBO_TERM_FAST)
-
-      COMBO(sym_tilde, &kp TILDE, 20 21, SYM, COMBO_TERM_FAST)
-      COMBO(sym_pipe, &kp PIPE, 21 22, SYM, COMBO_TERM_FAST)
-      COMBO(sym_n_ri, &none, 23 24, SYM, COMBO_TERM_FAST)
-      COMBO(sym_n_ro, &none, 24 25, SYM, COMBO_TERM_FAST)
-
-      COMBO(fun_f10, &kp F10, 20 21, FUN, COMBO_TERM_FAST)
-      COMBO(fun_pause, &kp PAUSE_BREAK, 21 22, FUN, COMBO_TERM_FAST)
-      COMBO(fun_n_ri, &none, 23 24, FUN, COMBO_TERM_FAST)
-      COMBO(fun_n_ro, &none, 24 25, FUN, COMBO_TERM_FAST)
-
-      COMBO(but_undo_l, &kp U_UND, 20 21, BUT, COMBO_TERM_FAST)
-      COMBO(but_redo_l, &kp U_RDO, 21 22, BUT, COMBO_TERM_FAST)
-      COMBO(but_redo_r, &kp U_RDO, 23 24, BUT, COMBO_TERM_FAST)
-      COMBO(but_undo_r, &kp U_UND, 24 25, BUT, COMBO_TERM_FAST)
-    #endif
+   
     
   };
 };
