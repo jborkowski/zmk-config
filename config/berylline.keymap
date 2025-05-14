@@ -34,7 +34,8 @@
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
       &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
                     &hm_m RALT X  &td U_CPY C    &kp D                                         &kp COMMA      &kp DOT        &hm_m RALT APOS
-                                                 &lt MOUSE TAB  &lt NAV SPC      &lt SYM RET   &lt NUM BSPC
+                                                 &lt MOUSE TAB  &lt NAV SPC      &lt SYM ESC   &lt NUM RET
+                                                 
       >;
     };
 
