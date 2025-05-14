@@ -1,0 +1,14 @@
+#define DEF 0
+#define NAV 1
+#define MOUSE 2
+#define MEDIA 3
+#define NUM 4
+#define SYM 5
+#define FUN 6
+#define BUT 7
+
+#define U_RDO K_REDO
+#define U_CUT LS(DEL)
+#define U_CPY LC(INS)
+#define U_PST LS(INS)
+#define U_UND K_UNDO
