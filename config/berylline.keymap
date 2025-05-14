@@ -42,7 +42,7 @@
       display-name = "NAV";
       bindings = <
       &trans    &trans    &trans     &trans     &trans    &kp U_RDO  &kp U_PST  &kp U_CPY  &kp U_CUT  &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &u_caps_word
+      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp END
                 &kp RALT  &trans     &molock                         &kp PG_DN  &kp PG_UP  &kp END
                                      &trans     &trans    &kp RET    &kp BSPC
       >;
