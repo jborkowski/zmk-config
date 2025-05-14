@@ -57,7 +57,7 @@
                 &kp RALT  &trans     &none                                &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT
                                      &trans     &trans    &mkp MB2        &mkp MB1
       >;
-    };
+   };
 
     media {
       display-name = "MEDIA";

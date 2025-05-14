@@ -10,7 +10,8 @@
   };
 
 &lt {
-  tapping-term-ms = <135>;
+    flavor = "balanced";
+    tapping-term-ms = <150>;
 };
 
 / {

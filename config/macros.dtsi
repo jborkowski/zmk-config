@@ -10,10 +10,5 @@
 / {
   macros {
     MACRO(other_w, &kp LC(X) &kp O)
-    MACRO(confirm, &kp LC(C) &kp LC(C))
-    MACRO(cancel, &kp LC(C) &kp LC(K))
-    MACRO(embark_a, &kp LC(C) &kp DOT)
-    MACRO(embark_d, &kp LC(C) &kp COMMA)
-    MACRO(embark_e, &kp LC(C) &kp LC(O))
   };
 };
