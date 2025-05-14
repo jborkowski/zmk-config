@@ -39,11 +39,14 @@
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
+    COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF SYM,     40, 100)
+    COMBO(colon,  &kp COLON,     RT3 RT4,     DEF SYM,     40, 100)
     #endif
     
     #ifdef KYRIA
     COMBO(studiounlock, &studio_unlock,   RT0 RT1 RT2,     DEF, 100, 500) 
     #endif
+
 
       /* COMBO(tab,    &kp TAB,       LM2 LM1,     DEF BRD SYM,  40, 100) */
       /* COMBO(bspc,   &kp BSPC,      RM1 RM2,     DEF BRD SYM,  40, 100) */
