@@ -10,12 +10,12 @@
 #include "keypos_def/30keys.h"
 
 #define BERYLLINE
-
 #include "utilities.dtsi"
 #include "mouse.dtsi"
 #include "behaviors.dtsi"
 #include "combos.dtsi"
 #include "macros.dtsi"
+
 
 / {
 
@@ -54,7 +54,7 @@
       display-name = "NAV";
       bindings = <
       &trans    &trans    &trans     &trans     &trans    &kp U_RDO  &kp U_PST  &kp U_CPY  &kp U_CUT  &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp END
+      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
                 &kp RALT  &trans     &none                           &kp PG_DN  &kp PG_UP  &kp END
                                      &trans     &trans    &kp RET    &kp BSPC
       >;
@@ -64,7 +64,7 @@
       display-name = "MOUSE";
       bindings = <
       &trans    &trans    &trans     &trans     &trans    &kp U_RDO       &kp U_PST       &kp U_CPY     &kp U_CUT        &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT 
                 &kp RALT  &trans     &none                                &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT
                                      &trans     &trans    &mkp MB2        &mkp MB1
       >;
