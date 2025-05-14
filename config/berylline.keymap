@@ -31,9 +31,9 @@
     default {
       display-name = "DEF";
       bindings = <
-      &kp W         &kp G         &kp D          &kp F          &kp B            &kp J         &kp L          &kp U          &kp O            &kp Y
-      &hm_o LGUI R  &hm_o LALT S  &hm_m LCTRL T  &hm_i LSHFT H  &kp K            &kp Z         &hm_i RSHFT N  &hm_m RCTRL E  &hm_o LALT A     &hm_o RGUI I
-                    &hm_m RALT C  &kp M          &kp P                                         &kp COMMA      &kp DOT        &hm_m RALT APOS
+      &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
+      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
+                    &hm_m RALT X  &td U_CPY C    &kp D                                         &kp COMMA      &kp DOT        &hm_m RALT APOS
                                                  &lt NAV SPACE  &lt MOUSE TAB    &lt SYM RET   &lt NUM BSPC
       >;
     };
