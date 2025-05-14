@@ -43,6 +43,7 @@
     COMBO(grave,  &kp GRAVE,     RT2 RT3,     DEF,          40, 100)
 
     COMBO(btclr,  &bt BT_CLR,    RB2 RB3,     FUN,          100, 200)
+    COMBO(btclr_all,  &bt BT_CLR_ALL,   RB1 RB2 RB3,   DEF,          100, 200)
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
 
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
