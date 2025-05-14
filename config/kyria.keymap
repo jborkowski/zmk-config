@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keypos_def/50keys.h"
 
-#define DEFAULT 0
+#define DEF 0
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
