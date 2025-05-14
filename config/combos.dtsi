@@ -35,8 +35,6 @@
     COMBO(q,      &kp Q,         LT3 LT2,     DEF,          80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF,          80,  50)
     COMBO(v,      &kp V,         LB2 LB1,     DEF,          40,  50)
-    COMBO(q,      &kp Q,         LT2 LT1,     DEF,          80,  50)
-    COMBO(v,      &kp V,         LT3 LT2,     DEF,          80,  50)
     COMBO(z,      &kp Z,         LB3 LB2,     DEF,          80,  50)
 
     /* COMBO(mouse,  &tog MSE,      LB3 LB2 LB1, DEF BRD MSE, 100, 100) */
