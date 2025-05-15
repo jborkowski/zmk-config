@@ -108,7 +108,7 @@
       >;
     };
 
-    polish = {
+    polish {
       display-name = "POL";
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kpML          &kp U          &kp Y            &kp BSPC 
