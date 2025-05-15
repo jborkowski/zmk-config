@@ -116,6 +116,7 @@
                     &hm_o RALT Z  &hm_o U_CPY C  &hm_o U_PST D                                 &kp M          &kp COMMA      &hm_o RALT DOT        
                                                  &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
       >;
+    };
  
 
   };
