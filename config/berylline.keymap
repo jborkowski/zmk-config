@@ -27,7 +27,13 @@
   ╰───╮ LB3 LB2 LB1     │     RB1 RB2 RB3 ╭───╯
       ╰───────╮ LH1 LH0 │ RH0 RH1 ╭───────╯
               ╰─────────┴─────────╯             */
-
+  cond_layers {
+      compatible = "zmk,conditional-layers";
+      func_tristate {
+          if-layers = <NAV MEDIA>;
+          then-layer = <FUN>;
+      };
+  };
 
   keymap {
     compatible = "zmk,keymap";
@@ -36,9 +42,9 @@
       display-name = "DEF";
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
-      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T   &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
+      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
                     &hm_o RALT X  &hml U_CPY C   &kp D                                         &kp H          &kp COMMA      &hm_o RALT DOT        
-                                                 &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC  &lt NUM RET
+                                                 &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };
 
@@ -55,9 +61,9 @@
     mouse {
       display-name = "MOUSE";
       bindings = <
-      &trans    &trans    &trans     &trans     &trans    &kp U_RDO       &kp U_PST       &kp U_CPY       &kp U_CUT        &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
-                &kp RALT  &trans     &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
+      &none     &none     &none      &none      &none     &mkp RCLK       &none           &none           &kp U_RDO        &kp U_UND
+      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
+                &kp RALT  &kp U_CPY  &kp U_PST                            &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
                                      &trans     &trans    &mkp MB2        &mkp MB1
       >;
    };
@@ -75,8 +81,8 @@
     numbers {
       display-name = "NUM";
       bindings = <
-      &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER    &kp EQUAL  &kp N7     &kp N8     &kp N9    &kp N0
-      &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS     &kp MINUS  &kp N4     &kp N5     &kp N4    &kp RET
+      &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER   &kp MINUS  &kp N7     &kp N8     &kp N9    &kp EQUAL
+      &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS    &kp N0     &kp N4     &kp N5     &kp N4    &kp RET
                 &kp GRAVE &kp LBKT   &kp RBKT                          &kp N1     &kp N2     &kp N3
                                      &trans    &kp MINUS    &trans     &trans
       >;
@@ -95,10 +101,10 @@
     functions {
       display-name = "FUN";
       bindings = <
-      &trans  &trans     &trans     &trans    &kp PSCRN      &kp F8  &kp F9     &kp F10    &kp F11   &kp F12 
-      &trans  &trans     &trans     &trans    &trans         &kp F3  &kp F4     &kp F5     &kp F6    &kp F7
-              &trans     &trans     &trans                           &kp F1     &kp F2     &kp F3   
-                                    &kp TAB   &kp SPACE      &trans  &trans
+      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp PSCRN      &none          &kp F8         &kp F9     &kp F10   &kp F11   &kp F12 
+      &trans       &trans       &trans        &trans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
+                   &trans       &trans        &trans                                       &kp F1     &kp F2     &kp F3   
+                                              &none         &rst_boot 0 0   &rst_boot 0 0  &none
       >;
     };
 
