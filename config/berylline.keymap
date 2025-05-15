@@ -43,7 +43,7 @@
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
       &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
-                    &hm_o RALT X  &hml U_CPY C   &kp D                                         &kp H          &kp COMMA      &hm_o RALT DOT        
+                    &hm_o RALT X  &hm_o U_CPY C  &hm_o U_PST D                                 &kp H          &kp COMMA      &hm_o RALT DOT        
                                                  &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };
@@ -63,7 +63,7 @@
       bindings = <
       &none     &none     &none      &none      &none     &mkp RCLK       &none           &none           &kp U_RDO        &kp U_UND
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
-                &kp RALT  &kp U_CPY  &kp U_PST                            &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
+                &kp RALT  &kp U_CPY  &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
                                      &trans     &trans    &mkp MB2        &mkp MB1
       >;
    };
@@ -107,6 +107,16 @@
                                               &none         &rst_boot 0 0   &rst_boot 0 0  &none
       >;
     };
+
+    polish = {
+      display-name = "POL";
+      bindings = <
+      &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kpML          &kp U          &kp Y            &kp BSPC 
+      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
+                    &hm_o RALT Z  &hm_o U_CPY C  &hm_o U_PST D                                 &kp M          &kp COMMA      &hm_o RALT DOT        
+                                                 &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
+      >;
+ 
 
   };
 };

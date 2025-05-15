@@ -5,7 +5,7 @@
 #define NUM 4
 #define SYM 5
 #define FUN 6
-#define BUT 7
+#define POL 7
 
 #define U_RDO K_REDO
 #define U_CUT LS(DEL)

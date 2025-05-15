@@ -43,17 +43,25 @@
     COMBO(grave,  &kp GRAVE,     RT2 RT3,     DEF SYM,  40, 100)
 
     COMBO(excl,   &kp EXCL,      LT2 LT1,     SYM,          40, 100) 
+    
+    COMBO(k,      &kp K,         RB1 RB2,     POL,          80,  50)
+    COMBO(m,      &kp M,         RB1 RB2,     DEF,          80,  50)
+
+    COMBO(z,      &kp Z,         LB3 LB2,     DEF,          80,  50)
+    COMBO(x,      &kp X,         LB3 LB2,     POL,             80,  50)
+
     #endif
 
     COMBO(q,      &kp Q,         LT3 LT2,     DEF,          80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF,          80,  50)
     COMBO(v,      &kp V,         LB2 LB1,     DEF,          40,  50)
-    COMBO(z,      &kp Z,         LB3 LB2,     DEF,          80,  50)
-    COMBO(m,      &kp M,         RB1 RB2,     DEF,          80,  50)
     COMBO(slsh,   &kp SLASH,     RB2 RB3,     DEF,          40,  50)
     
         
     #ifdef KYRIA
+    COMBO(m, &kp M, RB1 RB2,        DEF,  80,  50)
+    COMBO(z, &kp Z, LB3 LB2,        DEF,  80,  50)
+
     COMBO(studiounlock, &studio_unlock,   RT0 RT1 RT2,     DEF, 100, 500) 
 
     COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF,     40, 100)
