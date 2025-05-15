@@ -25,8 +25,9 @@
 
     #ifdef BERYLLINE
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
+    COMBO(polish, &tog POL,      LT3 LT2 LT1, DEF POL,     100, 100)
     COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF SYM,     40, 100)
-    COMBO(colon,  &kp COLON,     RT3 RT4,     DEF SYM,     40, 100)
+    COMBO(colon,  &kp COLON,     RT3 RT4,     D   EF SYM,     40, 100)
 
     COMBO(btclr,  &bt BT_CLR,    RB2 RB3,     FUN,          100, 200)
     COMBO(bootld, &bootloader,   LT0 RT0,     FUN,          100, 500) 
@@ -38,9 +39,8 @@
     COMBO(lbkt,   &kp LBKT,      LM3 LM2,     DEF SYM,  40, 100)
     COMBO(rbkt,   &kp RBKT,      RM2 RM3,     DEF SYM,  40, 100)
 
-
     COMBO(sqt,    &kp SQT,       RT1 RT2,     DEF SYM,  40, 100)
-    COMBO(grave,  &kp GRAVE,     RT2 RT3,     DEF SYM,  40, 100)
+    COMBO(grave,  &kp GRAVE,     RT RT3,     DEF SYM,  40, 100)
 
     COMBO(excl,   &kp EXCL,      LT2 LT1,     SYM,          40, 100) 
     
