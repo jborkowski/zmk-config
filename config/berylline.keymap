@@ -30,7 +30,7 @@
   cond_layers {
       compatible = "zmk,conditional-layers";
       func_tristate {
-          if-layers = <NAV MEDIA>;
+          if-layers = <NAV NUM>;
           then-layer = <FUN>;
       };
   };
