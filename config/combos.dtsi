@@ -25,6 +25,7 @@
 
     #ifdef BERYLLINE
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
+    
     COMBO(polish, &tog POL,      LT3 LT2 LT1, DEF POL,     100, 100)
     COMBO(semi,   &kp SEMI,      RB1 RB2 RB3, DEF SYM POL,     40, 100)
     COMBO(colon,  &kp COLON,     RT3 RT4,     DEF SYM POL,     40, 100)
@@ -57,7 +58,7 @@
 
     COMBO(q,      &kp Q,         LT3 LT2,     DEF POL,      80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF POL,      80,  50)
-    COMBO(v,      &hm_o U_PST V,         LB2 LB1,     DEF POL,      40,  50)
+    COMBO(v,      &hm_o U_PST V, LB2 LB1,     DEF POL,      40,  50)
     
         
     #ifdef KYRIA

@@ -27,7 +27,7 @@
   ╰───╮ LB3 LB2 LB1     │     RB1 RB2 RB3 ╭───╯
       ╰───────╮ LH1 LH0 │ RH0 RH1 ╭───────╯
               ╰─────────┴─────────╯             */
-  cond_layers {
+  conditional_layers {
       compatible = "zmk,conditional-layers";
       mouse_layer {
           if-layers = <SYM NUM>;
@@ -59,7 +59,7 @@
       &trans    &trans    &trans     &trans     &kp U_PST &kp U_RDO  &none         &kp U_CPY  &kp U_CUT  &kp U_UND
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
                 &kp RALT  &trans     &none                           &kp PG_DN  &kp PG_UP  &kp END
-                                     &trans     &trans    &lt MEDIA ESC &lt NUM RET
+                                     &trans     &trans    &trans     &trans
       >;
     };
 
@@ -71,7 +71,7 @@
                 &kp RALT  &kp U_CPY  &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
                                      &trans     &trans    &trans          &trans
       >;
-   };
+    };
 
     media {
       display-name = "MEDIA";
@@ -79,7 +79,7 @@
       &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &none         &none               &trans     &trans     &trans     &trans     &trans
       &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &kp C_STOP    &none               &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
                     &kp C_PREV    &kp C_NEXT    &kp C_PP                          &none      &trans     &kp RALT
-                                                &lt SYM TAB   &mo NAV             &trans     &trans
+                                                &trans     &trans    &trans          &trans
       >;
     };
 
@@ -89,7 +89,7 @@
       &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER   &kp MINUS  &kp N7     &kp N8     &kp N9    &kp EQUAL
       &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS    &kp N0     &kp N4     &kp N5     &kp N6    &kp RET
                 &kp GRAVE &kp LBKT   &kp RBKT                         &kp N1     &kp N2     &kp N3
-                                     &lt SYM TAB  &lt NAV SPC         &trans     &trans
+                                     &trans     &trans    &trans          &trans
       >;
     };
 
@@ -99,7 +99,7 @@
       &kp EXCL   &kp AT         &kp HASH      &kp DOLLAR &kp PRCNT    &kp CARET &kp AMPS &kp STAR   &kp SEMI  &kp COLON  
       &kp COLON  &kp DOLLAR     &kp PERCENT   &kp CARET  &kp PLUS     &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI
                  &kp EXCL       &kp AT_SIGN   &kp HASH                        &none      &trans     &kp RALT
-                                              &trans     &trans               &lt MEDIA ESC &mo NUM
+                                              &trans     &trans               &trans     &trans
       >;
     };
 
@@ -119,7 +119,7 @@
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
       &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
                     &hm_o RALT Z  &hm_o U_CPY C  &hm_o U_PST D                                 &kp M          &kp COMMA      &hm_o RALT DOT        
-                                                 &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
+                                                 &trans     &trans               &trans     &trans
       >;
 
     };
