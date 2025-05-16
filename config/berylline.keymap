@@ -107,9 +107,9 @@
       display-name = "FUN";
       bindings = <
       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp PSCRN      &none          &kp F8         &kp F9     &kp F10   &kp F11   &kp F12 
-      &trans       &trans       &trans        &rans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
+      &trans       &trans       &trans        &trans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
                    &trans       &trans        &trans                                       &kp F1     &kp F2     &kp F3   
-                                              &none         &rst_boot 0 0   &rst_boot 0 0  &none
+                                              &none          &rst_boot 0 0   &rst_boot 0 0  &none
       >;
     };
 
