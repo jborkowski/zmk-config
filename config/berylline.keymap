@@ -29,10 +29,15 @@
               ╰─────────┴─────────╯             */
   cond_layers {
       compatible = "zmk,conditional-layers";
-      func_tristate {
-          if-layers = <NAV NUM>;
-          then-layer = <FUN>;
+      mouse_layer {
+          if-layers = <SYM NUM>;
+          then-layer = <MOUSE>;
       };
+
+      fun_layer {
+          if-layers = <NAV MEDIA>;
+          then-layer =  <FUN>;
+      }
   };
 
   keymap {
@@ -43,15 +48,15 @@
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
       &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
-                    &hm_o RALT X  &hm_o U_CPY C  &hm_o U_PST D                                 &kp H          &kp COMMA      &hm_o RALT DOT        
-                                                 &lt NAV TAB  &lt SYM SPC        &lt MEDIA ESC &lt NUM RET
+                    &hm_o RALT X  &hm_o U_CPY C  &kp D                                         &kp H          &kp COMMA      &hm_o RALT DOT        
+                                                 &lt SYM TAB  &lt NAV SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };
 
     navigation {
       display-name = "NAV";
       bindings = <
-      &trans    &trans    &trans     &trans     &trans    &kp U_RDO  &kp U_PST  &kp U_CPY  &kp U_CUT  &kp U_UND
+      &trans    &trans    &trans     &trans     &kp U_PST &kp U_RDO  &none         &kp U_CPY  &kp U_CUT  &kp U_UND
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
                 &kp RALT  &trans     &none                           &kp PG_DN  &kp PG_UP  &kp END
                                      &trans     &trans    &trans    &trans
@@ -61,18 +66,18 @@
     mouse {
       display-name = "MOUSE";
       bindings = <
-      &none     &none     &none      &none      &none     &mkp RCLK       &none           &none           &kp U_RDO        &kp U_UND
+      &none     &none     &none      &none      &kp U_PST &mkp MB2        &mkp RCLK       &none           &kp U_RDO        &kp U_UND
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
                 &kp RALT  &kp U_CPY  &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
-                                     &trans     &trans    &mkp MB2        &mkp MB1
+                                     &trans     &trans    &trans          &trans
       >;
    };
 
     media {
       display-name = "MEDIA";
       bindings = <
-      &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &bt BT_SEL 0  &bt BT_CLR          &trans     &trans     &trans     &trans     &trans
-      &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &bt BT_SEL 1  &kp LC(LS(BSLH))    &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+      &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &none         &none               &trans     &trans     &trans     &trans     &trans
+      &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &none         &kp LC(LS(BSLH))    &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
                     &kp C_PREV    &kp C_NEXT    &kp LA(LS(LC(R)))                            &none      &trans     &kp RALT
                                                  &kp C_PP      &kp C_STOP         &trans     &trans
       >;
@@ -83,7 +88,7 @@
       bindings = <
       &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER   &kp MINUS  &kp N7     &kp N8     &kp N9    &kp EQUAL
       &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS    &kp N0     &kp N4     &kp N5     &kp N6    &kp RET
-                &kp GRAVE &kp LBKT   &kp RBKT                          &kp N1     &kp N2     &kp N3
+                &kp GRAVE &kp LBKT   &kp RBKT                         &kp N1     &kp N2     &kp N3
                                      &trans    &kp MINUS    &trans     &trans
       >;
     };
@@ -102,7 +107,7 @@
       display-name = "FUN";
       bindings = <
       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp PSCRN      &none          &kp F8         &kp F9     &kp F10   &kp F11   &kp F12 
-      &trans       &trans       &trans        &trans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
+      &trans       &trans       &trans        &rans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
                    &trans       &trans        &trans                                       &kp F1     &kp F2     &kp F3   
                                               &none         &rst_boot 0 0   &rst_boot 0 0  &none
       >;
