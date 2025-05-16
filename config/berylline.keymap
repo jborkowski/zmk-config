@@ -59,7 +59,7 @@
       &trans    &trans    &trans     &trans     &kp U_PST &kp U_RDO  &none         &kp U_CPY  &kp U_CUT  &kp U_UND
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
                 &kp RALT  &trans     &none                           &kp PG_DN  &kp PG_UP  &kp END
-                                     &trans     &trans    &trans    &trans
+                                     &trans     &trans    &lt MEDIA ESC &lt NUM RET
       >;
     };
 
@@ -79,7 +79,7 @@
       &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &none         &none               &trans     &trans     &trans     &trans     &trans
       &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &kp C_STOP    &none               &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
                     &kp C_PREV    &kp C_NEXT    &kp C_PP                          &none      &trans     &kp RALT
-                                                &trans        &trans              &trans     &trans
+                                                &lt SYM TAB  &lt NAV SPC          &trans     &trans
       >;
     };
 
@@ -89,7 +89,7 @@
       &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER   &kp MINUS  &kp N7     &kp N8     &kp N9    &kp EQUAL
       &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS    &kp N0     &kp N4     &kp N5     &kp N6    &kp RET
                 &kp GRAVE &kp LBKT   &kp RBKT                         &kp N1     &kp N2     &kp N3
-                                     &trans    &kp MINUS    &trans     &trans
+                                     &lt SYM TAB  &lt NAV SPC         &trans     &trans
       >;
     };
 
@@ -99,7 +99,7 @@
       &kp EXCL   &kp AT         &kp HASH      &kp DOLLAR &kp PRCNT    &kp CARET &kp AMPS &kp STAR   &kp SEMI  &kp COLON  
       &kp COLON  &kp DOLLAR     &kp PERCENT   &kp CARET  &kp PLUS     &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI
                  &kp EXCL       &kp AT_SIGN   &kp HASH                        &none      &trans     &kp RALT
-                                              &kp RPAR   &kp UNDER    &trans  &trans
+                                              &trans     &trans               &lt MEDIA ESC &lt NUM RET
       >;
     };
 
