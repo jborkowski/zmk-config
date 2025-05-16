@@ -77,9 +77,9 @@
       display-name = "MEDIA";
       bindings = <
       &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &none         &none               &trans     &trans     &trans     &trans     &trans
-      &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &none         &kp LC(LS(BSLH))    &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
-                    &kp C_PREV    &kp C_NEXT    &kp LA(LS(LC(R)))                            &none      &trans     &kp RALT
-                                                 &kp C_PP      &kp C_STOP         &trans     &trans
+      &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &kp C_STOP    &none               &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+                    &kp C_PREV    &kp C_NEXT    &kp C_PP                          &none      &trans     &kp RALT
+                                                &trans        &trans              &trans     &trans
       >;
     };
 
@@ -109,7 +109,7 @@
       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp PSCRN      &none          &kp F8         &kp F9     &kp F10   &kp F11   &kp F12 
       &trans       &trans       &trans        &trans         &trans         &kp F3         &kp F4     &kp F5    &kp F6    &kp F7
                    &trans       &trans        &trans                                       &kp F1     &kp F2     &kp F3   
-                                              &none          &rst_boot 0 0   &rst_boot 0 0  &none
+                                              &rst_boot 0 0  &trans         &trans          &rst_boot 0 0 
       >;
     };
 
