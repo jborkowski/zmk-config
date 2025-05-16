@@ -18,10 +18,7 @@
 
 / {
   combos {
-
-
     compatible = "zmk,combos";
-
 
     #ifdef BERYLLINE
     COMBO(mouse,  &tog MOUSE,    LB3 LB2 LB1, DEF MOUSE,    100, 100)
@@ -58,7 +55,7 @@
 
     COMBO(q,      &kp Q,         LT3 LT2,     DEF POL,      80,  50)
     COMBO(j,      &kp J,         LT2 LT1,     DEF POL,      80,  50)
-    COMBO(v,      &hm_o U_PST V, LB2 LB1,     DEF POL,      40,  50)
+    COMBO(v,      &kp V,         LB2 LB1,     DEF POL,      40,  50)
     
         
     #ifdef KYRIA

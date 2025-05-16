@@ -27,7 +27,7 @@
   ╰───╮ LB3 LB2 LB1     │     RB1 RB2 RB3 ╭───╯
       ╰───────╮ LH1 LH0 │ RH0 RH1 ╭───────╯
               ╰─────────┴─────────╯             */
-  conditional_layers {
+  cond_layers {
       compatible = "zmk,conditional-layers";
       mouse_layer {
           if-layers = <SYM NUM>;
@@ -36,7 +36,7 @@
 
       fun_layer {
           if-layers = <NAV MEDIA>;
-          then-layer =  <FUN>;
+          then-layer = <FUN>;
       };
   };
 
@@ -52,6 +52,18 @@
                                                  &lt SYM TAB  &lt NAV SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };
+    
+    polish {
+      display-name = "POL";
+      bindings = <
+      &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
+      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
+                    &hm_o RALT Z  &hm_o U_CPY C  &hm_o U_PST D                                 &kp M          &kp COMMA      &hm_o RALT DOT        
+                    
+                                                 &trans     &trans               &trans     &trans
+      >;
+
+    };
 
     navigation {
       display-name = "NAV";
@@ -60,16 +72,6 @@
       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
                 &kp RALT  &trans     &none                           &kp PG_DN  &kp PG_UP  &kp END
                                      &trans     &trans    &trans     &trans
-      >;
-    };
-
-    mouse {
-      display-name = "MOUSE";
-      bindings = <
-      &none     &none     &none      &none      &kp U_PST &mkp MB2        &mkp RCLK       &none           &kp U_RDO        &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
-                &kp RALT  &kp U_CPY  &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
-                                     &trans     &trans    &trans          &trans
       >;
     };
 
@@ -113,16 +115,16 @@
       >;
     };
 
-    polish {
-      display-name = "POL";
+    mouse {
+      display-name = "MOUSE";
       bindings = <
-      &kp Q         &kp W         &kp F          &kp P          &kp B            &kp J         &kp L          &kp U          &kp Y            &kp BSPC 
-      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G            &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O 
-                    &hm_o RALT Z  &hm_o U_CPY C  &hm_o U_PST D                                 &kp M          &kp COMMA      &hm_o RALT DOT        
-                                                 &trans     &trans               &trans     &trans
+      &none     &none     &none      &none      &kp U_PST &mkp MB2        &mkp RCLK       &none           &kp U_RDO        &kp U_UND
+      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT 
+                &kp RALT  &kp U_CPY  &none                                &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT
+                                     &trans     &trans    &trans          &trans
       >;
-
     };
+
  
 
   };
