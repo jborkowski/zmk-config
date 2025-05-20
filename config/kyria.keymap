@@ -3,99 +3,119 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
-
-
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include "keypos_def/50keys.h"
 
-#define DEF 0
-#define LOWER   1
-#define RAISE   2
-#define ADJUST  3
-#define POL     4
-
 #define KYRIA
-
-#define U_CUT LS(DEL)
-#define U_CPY LC(INS)
-#define U_PST LS(INS)
-
+#include "utilities.dtsi"
 #include "mouse.dtsi"
 #include "behaviors.dtsi"
 #include "combos.dtsi"
+#include "macros.dtsi"
+
 
 / {
-   conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+  cond_layers {
+      compatible = "zmk,conditional-layers";
+      mouse_layer {
+          if-layers = <SYM NUM>;
+          then-layer = <MOUSE>;
+      };
+
+      fun_layer {
+          if-layers = <NAV MEDIA>;
+          then-layer = <FUN>;
+      };
+  };
 
   keymap {
     compatible = "zmk,keymap";
 
-    default_layer {
+    default {
+      display-name = "DEF";
       bindings = <
-// +---------+----------+------------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
-// |         |          |            |            |            |            |                                                |            |            |            |            |            |         |
-   &none     &kp Q        &kp W         &kp F          &kp P          &kp B                                                  &kp J        &kp L        &kp U        &kp Y        &kp BSPC     &none
-   &none     &hm_o LGUI A &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G                                                  &kp K        &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I  &hm_o RGUI O &none
-   &none     &kp Z        &hm_o RALT X  &td U_CPY C    &kp D          &td U_PST V   &none   &none   &none      &none         &kp M        &kp H        &kp COMMA    &hm_o RALT DOT   &kp FSLH &none
-// +---------+----------+------------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                     &none        &trans       &mo LOWER  &kp SPC      &none           &none      &kp ESC    &mo RAISE    &none        &none
-//                                   |            |            |            |          |         |     |          |          |            |            |            |
-//                                   +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
+      &none &kp Q         &kp W         &kp F          &kp P          &kp B                                    &kp J         &kp L          &kp U          &kp Y            &kp BSPC     &none
+      &none &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G                                    &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O &none
+      &none &kp Z         &hm_o RALT X  &td U_CPY C    &kp D          &td U_PST V      &none &none &none &none &kp M         &kp H          &kp COMMA      &hm_o RALT DOT   &kp FSLH     &none
+                                        &none &none    &tl SYM TAB    &lt NAV SPC            &none &none       &lt MEDIA ESC &lt NUM RET    &none &none
+      >;
+    };
+    
+    polish {
+      display-name = "POL";
+      bindings = <
+      &none &kp Q         &kp W         &kp F          &kp P          &kp B                                    &kp J         &kp L          &kp U          &kp Y            &kp BSPC     &none
+      &none &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G                                    &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O &none
+      &none &kp Z         &hm_o RALT X  &td U_CPY C    &kp D          &td U_PST V      &none &none &none &none &kp M         &kp H          &kp COMMA      &hm_o RALT DOT   &kp FSLH     &none
+                                        &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
+      >;
+
+    };
+
+    navigation {
+      display-name = "NAV";
+      bindings = <
+      &none &trans        &trans        &trans         &trans         &kp U_PST                                &kp U_RDO     &none          &kp U_CPY      &kp U_CUT        &kp U_UND    &none
+      &none &kp LGUI      &kp LALT      &kp LCTRL      &kp LSHFT      &trans                                   &trans        &kp LEFT       &kp DOWN       &kp UP           &kp RIGHT    &none
+      &none &trans        &kp RALT      &trans         &none          &none            &none &none &none &none &none         &kp PG_DN      &kp PG_UP      &kp END          &none        &none  
+                                        &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
       >;
     };
 
-
-
-    lower_layer {
+    media {
+      display-name = "MEDIA";
       bindings = <
-// +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
-// |        |          |           |            |            |            |                                                |            |            |            |            |            |         |
-   &none    &kp EXCL   &kp AT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                     &kp CARET    &kp AMPS     &kp STAR     &kp SEMI     &kp COLON    &none
-   &none    &kp LCTRL  &kp LCTRL   &kp GRAVE    &kp APOS     &kp DQT                                                       &kp SQT      &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none
-   &none    &none      &none       &none        &kp UNDER    &none        &none      &none           &none      &none      &none        &none        &none        &none        &kp DQT      &none
-// +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                   &trans       &trans       &trans       &trans     &none           &trans     &trans      &trans       &trans       &none
-//                                 |            |            |            |          |         |     |          |          |            |            |            |
-//                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
+      &none &trans        &kp PSCRN     &kp C_BRI_UP   &kp C_BRI_DN   &none                                    &trans        &trans         &trans         &trans           &trans       &none
+      &none &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP   &kp C_STOP     &none                                    &trans        &kp LSHFT      &kp LCTRL      &kp LALT         &kp LGUI     &none
+      &none &trans        &kp C_PREV    &kp C_NEXT     &kp C_PP       &none            &none &none &none &none &none         &trans         &kp RALT       &none            &none        &none
+                                        &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
       >;
     };
 
-    raise_layer {
+    numbers {
+      display-name = "NUM";
       bindings = <
-// +--------+----------+-----------+------------+------------+------------+                                                +------------+------------+------------+------------+------------+---------+
-// |        |          |           |            |            |            |                                                |            |            |            |            |            |         |
-   &trans   &kp TAB    &kp TILDE   &kp LPAR     &kp RPAR     &kp UNDER                                                     &kp MINUS    &kp N7       &kp N8       &kp N9       &kp DOT      &trans
-   &trans   &kp ESC    &kp PIPE    &kp LBRC     &kp RBRC     &kp PLUS                                                      &kp EQUAL    &kp N4       &kp N5       &kp N6       &kp RET      &trans
-   &trans   &kp GRAVE  &trans      &kp LBKT     &kp RBKT     &kp BSLH     &trans     &trans          &trans    &trans      &kp N0       &kp N1       &kp N2       &kp N3       &kp EQUAL    &trans
-// +--------+----------+-----------+------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+------------+------------+---------+
-                                   &trans       &trans       &trans       &trans     &trans           &trans    &trans     &trans       &trans       &trans
-//                                 |            |            |            |          |         |     |          |          |            |            |            |
-//                                 +------------+------------+------------+----------+---------+     +----------+----------+------------+------------+------------+
+      &none &kp TAB   &kp TILDE &kp LPAR   &kp RPAR  &kp UNDER                       &kp MINUS  &kp N7     &kp N8     &kp N9    &kp EQUAL &none
+      &none &none     &kp PIPE  &kp LBRC   &kp RBRC  &kp PLUS                        &kp N0     &kp N4     &kp N5     &kp N6    &kp RET   &none
+      &none &trans    &kp GRAVE &kp LBKT   &kp RBKT  &none  &none &none &none &none  &none      &kp N1     &kp N2     &kp N3    &none     &none
+             &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
       >;
     };
 
-    adjust_layer {
+    symbols {
+      display-name = "SYM";
       bindings = <
-// +--------+----------+--------------+---------------+----------------+------------+                                                +-------------+------------+------------+-----------------+------------+---------+
-// |        |          |              |               |                |            |                                                |             |            |            |                 |            |         |
-   &trans   &none      &none          &mmv MOVE_UP    &kp C_VOL_DN     &kp C_VOL_UP                                                  &kp C_BRI_INC &kp C_PREV   &kp C_NEXT   &msc SCRL_UP      &none        &trans
-   &trans   &trans     &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                                                        &kp C_BRI_DEC &mkp LCLK    &mkp RCLK    &msc SCRL_DOWN    &none        &trans
-   &trans   &none      &kp C_PLAY     &trans          &trans           &trans       &trans     &trans          &trans    &trans      &kp PSCRN     &none        &bt BT_PRV   &bt BT_NXT        &bt BT_CLR   &trans
-// +--------+----------+--------------+---------------+----------------+------------+----------+---------+     +---------+-----------+-------------+------------+------------+-----------------+------------+---------+
-                                      &trans          &trans           &trans       &trans     &trans          &trans    &trans      &trans        &trans       &trans
-//                                    |               |                |            |          |         |     |         |           |             |            |            |
-//                                    +---------------+----------------+------------+----------+---------+     +---------+-----------+-------------+------------+------------+
+      &none &kp EXCL   &kp AT         &kp HASH      &kp DOLLAR &kp PRCNT                      &kp CARET &kp AMPS &kp STAR   &kp SEMI  &kp COLON &none
+      &none &inv_qm    &kp GRAVE      &kp SQT       &kp DQT    &none                          &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
+      &none &none      &kp QMARK      &kp AT_SIGN   &kp HASH   &none &none &none &none &none  &none   &none      &trans     &kp RALT  &none     &none
+             &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
       >;
     };
+
+    functions {
+      display-name = "FUN";
+      bindings = <
+      &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp PSCRN      &none                                  &kp F8         &kp F9     &kp F10   &kp F11   &kp F12 &none
+      &none &trans       &trans       &trans        &trans         &trans                                 &kp F3         &kp F4     &kp F5    &kp F6    &kp F7  &none 
+      &none &none        &trans       &trans        &trans         &none   &none &none &none &none        &none          &kp F1     &kp F2    &kp F3    &none   &none 
+             &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
+                                              /* &rst_boot 0 0  &trans         &trans          &rst_boot 0 0 */ 
+      >;
+    };
+
+    mouse {
+      display-name = "MOUSE";
+      bindings = <
+      &none &none     &none     &none      &none      &kp U_PST                        &none           &mkp LCLK       &mkp RCLK       &kp U_RDO        &kp U_UND       &none
+      &none &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none                            &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT &none
+      &none &none     &kp RALT  &kp U_CPY  &none      &none  &none &none &none &none   &none           &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT  &none           &none 
+             &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
+      >;
+    };
+
   };
 };
+
 
