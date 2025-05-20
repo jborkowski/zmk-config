@@ -89,7 +89,7 @@
       bindings = <
       &none &kp EXCL   &kp AT         &kp HASH      &kp DOLLAR &kp PRCNT                      &kp CARET &kp AMPS &kp STAR   &kp SEMI  &kp COLON &none
       &none &inv_qm    &kp GRAVE      &kp SQT       &kp DQT    &none                          &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI  &none
-      &none &none      &kp QMARK      &kp AT_SIGN   &kp HASH   &none &none &none &none &none  &none   &none      &trans     &kp RALT  &none     &none
+      &none &none      &kp QMARK      &kp AT_SIGN   &kp BSLH   &none &none &none &none &none  &none   &none      &trans     &kp RALT  &none     &none
              &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
       >;
     };
