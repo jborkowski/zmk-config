@@ -78,8 +78,8 @@
     media {
       display-name = "MEDIA";
       bindings = <
-      &kp PSCRN     &kp C_BRI_UP  &kp C_BRI_DN  &none         &none               &trans     &trans     &trans     &trans     &trans
-      &kp LA(PSCRN) &kp C_VOL_DN  &kp C_VOL_UP  &kp C_STOP    &none               &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
+      &kp PSCRN     &none         &kp C_VOL_DN  &kp C_VOL_UP  &none               &trans     &trans     &trans     &trans     &trans
+      &kp LA(PSCRN) &none         &kp C_BRI_UP  &kp C_BRI_DN  &kp C_STOP          &trans     &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
                     &kp C_PREV    &kp C_NEXT    &kp C_PP                          &none      &trans     &kp RALT
                                                 &trans     &trans    &trans          &trans
       >;
@@ -99,7 +99,7 @@
       display-name = "SYM";
       bindings = <
       &kp EXCL   &kp AT         &kp HASH      &kp DOLLAR &kp PRCNT    &kp CARET &kp AMPS &kp STAR   &kp SEMI  &kp COLON  
-      &inv_qm    &kp GRAVE      &kp SQT       &kp DQT    &none        &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI
+      &inv_qm    &none          &kp GRAVE     &kp SQT    &kp DQT      &trans  &kp RSHFT  &kp RCTRL  &kp LALT  &kp RGUI
                  &kp QMARK      &kp AT_SIGN   &kp BSLH                        &none      &trans     &kp RALT
                                               &trans     &trans               &trans     &trans
       >;
