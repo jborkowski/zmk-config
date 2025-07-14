@@ -43,17 +43,6 @@
       >;
     };
     
-    polish {
-      display-name = "POL";
-      bindings = <
-      &none &kp Q         &kp W         &kp F          &kp P          &kp B                                    &kp J         &kp L          &kp U          &kp Y            &kp BSPC     &none
-      &none &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp G                                    &kp K         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O &none
-      &none &kp Z         &hm_o RALT X  &td U_CPY C    &kp D          &td U_PST V      &none &none &none &none &kp M         &kp H          &kp COMMA      &hm_o RALT DOT   &kp FSLH     &none
-                                        &none &none    &trans         &trans                 &none &none       &trans        &trans    &none &none
-      >;
-
-    };
-
     navigation {
       display-name = "NAV";
       bindings = <
