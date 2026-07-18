@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurora Sweep — layout cheat sheet</title>
+  <style>
+    :root {
+      --bg: #1a1c1e;
+      --panel: #24282c;
+      --key: #2e343a;
+      --key-hold: #3d4a3a;
+      --key-layer: #3a3d52;
+      --key-mod: #4a3f35;
+      --key-empty: #222526;
+      --ink: #e8eaed;
+      --mute: #9aa0a6;
+      --accent: #7cb87c;
+      --fun: #c9a227;
+      --thumb: #355a6e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", "Source Sans 3", system-ui, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #2a3038, var(--bg));
+      color: var(--ink);
+      padding: 1.5rem;
+    }
+    h1 {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.35rem;
+    }
+    .sub { color: var(--mute); font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .sub code { color: var(--accent); }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .tabs button {
+      font: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid #3a4048;
+      background: var(--panel);
+      color: var(--mute);
+      padding: 0.45rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tabs button.active {
+      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .tabs button[data-layer="FUN"].active { background: var(--fun); border-color: var(--fun); }
+    .board {
+      display: none;
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 1.25rem;
+      max-width: 920px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    .board.active { display: block; }
+    .how {
+      color: var(--mute);
+      font-size: 0.85rem;
+      margin: 0 0 1rem;
+      line-height: 1.4;
+    }
+    .kb {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .rows { display: flex; flex-direction: column; gap: 0.35rem; }
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+    .half { display: flex; gap: 0.35rem; }
+    .gap { width: 1.25rem; flex-shrink: 0; }
+    .key {
+      width: 4.1rem;
+      height: 3.35rem;
+      border-radius: 7px;
+      background: var(--key);
+      border: 1px solid #3a424a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2rem;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .key.hold { background: var(--key-hold); border-color: #4f6348; }
+    .key.layer { background: var(--key-layer); border-color: #50567a; }
+    .key.mod { background: var(--key-mod); border-color: #6a5848; }
+    .key.thumb { background: var(--thumb); border-color: #4a7088; width: 4.6rem; }
+    .key.empty { background: var(--key-empty); border-style: dashed; color: #555; }
+    .key .tap {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .key .hold-l {
+      font-size: 0.62rem;
+      color: var(--accent);
+      margin-top: 0.15rem;
+    }
+    .key.fun-accent .tap { color: var(--fun); }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--mute);
+    }
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 2px;
+      margin-right: 0.35rem;
+      vertical-align: -0.1rem;
+    }
+    .legend .l-hold::before { background: var(--key-hold); }
+    .legend .l-layer::before { background: var(--key-layer); }
+    .legend .l-mod::before { background: var(--key-mod); }
+    .legend .l-thumb::before { background: var(--thumb); }
+    .combos {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #3a4048;
+      font-size: 0.8rem;
+      color: var(--mute);
+      columns: 2;
+      gap: 1rem;
+    }
+    .combos strong { color: var(--ink); }
+    @media (max-width: 720px) {
+      .key { width: 2.85rem; height: 2.7rem; }
+      .key.thumb { width: 3.2rem; }
+      .key .tap { font-size: 0.62rem; }
+      .key .hold-l { font-size: 0.5rem; }
+      .gap { width: 0.5rem; }
+      .combos { columns: 1; }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <h1>Aurora Sweep · 34-key</h1>
+  <p class="sub">Colemak · hold Space = NAV · Esc = MEDIA · Tab = SYM · Ret = NUM · <code>FUN = NAV+MEDIA</code> · <code>MOUSE = SYM+NUM</code></p>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="boards"></div>
+
+  <script>
+    const K = (tap, hold = null, cls = "") => ({ tap, hold, cls });
+    const E = () => K("·", null, "empty");
+    const T = (t) => K(t, null, "thumb layer");
+
+    const layers = {
+      DEF: {
+        how: "Base Colemak. Home-row holds = mods. Hold X / . = AltGr (mod-tap). Hold C / B = copy / paste. Hold R / I = Option (LALT).",
+        rows: [
+          [K("Q"), K("W"), K("F"), K("P"), K("G"), K("J"), K("L"), K("U"), K("Y"), K("⌫")],
+          [
+            K("A", "⌘", "hold"), K("R", "⌥", "hold"), K("S", "⌃", "hold"), K("T", "⇧", "hold"), K("D"),
+            K("H"), K("N", "⇧", "hold"), K("E", "⌃", "hold"), K("I", "⌥", "hold"), K("O", "⌘", "hold"),
+          ],
+          [
+            K("Z"), K("X", "AltGr", "mod"), K("C", "Copy", "hold"), K("V"), K("B", "Paste", "hold"),
+            K("K"), K("M"), K(","), K(".", "AltGr", "mod"), K("/"),
+          ],
+          [T("TAB\nSYM"), T("SPC\nNAV"), T("ESC\nMEDIA"), T("RET\nNUM")],
+        ],
+      },
+      NAV: {
+        how: "Hold left Space. Sticky ⌥ / AltGr on left (tap then letter for Polish). Arrows on right home row. Clipboard top-right.",
+        rows: [
+          [E(), E(), E(), E(), K("Paste"), K("Redo"), E(), K("Copy"), K("Cut"), K("Undo")],
+          [K("⌘", null, "mod"), K("⌥ sticky", null, "mod"), K("⌃", null, "mod"), K("⇧", null, "mod"), E(), E(), K("←"), K("↓"), K("↑"), K("→")],
+          [E(), K("AltGr sticky", null, "mod"), E(), E(), E(), E(), K("PgDn"), K("PgUp"), K("End"), E()],
+          [T("(hold)"), T("NAV"), T("(hold)"), T("(hold)")],
+        ],
+      },
+      MEDIA: {
+        how: "Hold right Esc. Volume / brightness / transport. Hold NAV+MEDIA together → FUN.",
+        rows: [
+          [K("PrtSc"), E(), K("Vol−"), K("Vol+"), E(), E(), E(), E(), E(), E()],
+          [K("⌥PrtSc"), E(), K("Bri+"), K("Bri−"), K("Stop"), E(), K("⇧", null, "mod"), K("⌃", null, "mod"), K("⌥", null, "mod"), K("⌘", null, "mod")],
+          [E(), K("⏮"), K("⏭"), K("⏯"), E(), E(), E(), E(), K("AltGr", null, "mod")],
+          [T("(hold)"), T("(hold)"), T("MEDIA"), T("(hold)")],
+        ],
+      },
+      NUM: {
+        how: "Hold right Enter. Numpad on right. Hold SYM+NUM → MOUSE.",
+        rows: [
+          [K("Tab"), K("~"), K("("), K(")"), K("_"), K("−"), K("7"), K("8"), K("9"), K("=")],
+          [E(), K("|"), K("{"), K("}"), K("+"), K("0"), K("4"), K("5"), K("6"), K("↵")],
+          [E(), K("`"), K("["), K("]"), E(), E(), K("1"), K("2"), K("3"), E()],
+          [T("(hold)"), T("(hold)"), T("(hold)"), T("NUM")],
+        ],
+      },
+      SYM: {
+        how: "Hold left Tab. Symbols. Right home = mods for one-shot chords. Hold SYM+NUM → MOUSE.",
+        rows: [
+          [K("!"), K("@"), K("#"), K("$"), K("%"), K("^"), K("&"), K("*"), K(";"), K(":")],
+          [K("¿"), E(), K("`"), K("'"), K('"'), E(), K("⇧", null, "mod"), K("⌃", null, "mod"), K("⌥", null, "mod"), K("⌘", null, "mod")],
+          [E(), K("?"), K("€"), K("\\"), E(), E(), E(), E(), K("AltGr", null, "mod"), E()],
+          [T("SYM"), T("(hold)"), T("(hold)"), T("(hold)")],
+        ],
+      },
+      FUN: {
+        how: "Hold NAV + MEDIA (both inner thumbs: Space + Esc). Bluetooth profiles, F-keys, bootloader.",
+        rows: [
+          [K("BT0", null, "fun-accent"), K("BT1", null, "fun-accent"), K("BT2", null, "fun-accent"), K("BT CLR", null, "fun-accent"), K("PrtSc"), K("F8"), K("F9"), K("F10"), K("F11"), K("F12")],
+          [E(), E(), E(), E(), E(), K("F3"), K("F4"), K("F5"), K("F6"), K("F7")],
+          [E(), E(), E(), E(), E(), E(), K("F1"), K("F2"), K("F3"), E()],
+          [T("boot/rst"), T("NAV"), T("MEDIA"), T("boot/rst")],
+        ],
+      },
+      MOUSE: {
+        how: "Hold SYM + NUM (outer thumbs: Tab + Enter). Pointer on right, mods on left.",
+        rows: [
+          [E(), E(), E(), E(), K("Paste"), E(), K("L-clk"), K("R-clk"), K("Redo"), K("Undo")],
+          [K("⌘", null, "mod"), K("⌥", null, "mod"), K("⌃", null, "mod"), K("⇧", null, "mod"), E(), E(), K("← move"), K("↓ move"), K("↑ move"), K("→ move")],
+          [E(), K("AltGr", null, "mod"), K("Copy"), E(), E(), E(), K("Scr↓"), K("Scr↑"), K("Scr→"), E()],
+          [T("SYM"), T("(hold)"), T("(hold)"), T("NUM")],
+        ],
+      },
+    };
+
+    const combos = [
+      ["X+C", "Z"],
+      ["C+V", "V"],
+      ["W+F", "Q"],
+      ["F+P", "J"],
+      ["H+,", "M"],
+      [",+.", "/"],
+      ["R+T / U+I", "( )"],
+      ["R+S / I+E", "[ ]"],
+      ["FUN: ,+.", "BT CLR"],
+      ["FUN: G+J", "bootloader"],
+    ];
+
+    function renderKey(k) {
+      const cls = ["key", k.cls || ""].join(" ").trim();
+      const hold = k.hold ? `<span class="hold-l">${k.hold}</span>` : "";
+      const tap = (k.tap || "").replace(/\n/g, "<br>");
+      return `<div class="${cls}"><span class="tap">${tap}</span>${hold}</div>`;
+    }
+
+    function renderRow(keys) {
+      if (keys.length === 4) {
+        return `<div class="row">${keys.map(renderKey).join("")}</div>`;
+      }
+      const L = keys.slice(0, 5).map(renderKey).join("");
+      const R = keys.slice(5).map(renderKey).join("");
+      return `<div class="row"><div class="half">${L}</div><div class="gap"></div><div class="half">${R}</div></div>`;
+    }
+
+    const tabs = document.getElementById("tabs");
+    const boards = document.getElementById("boards");
+    const order = ["DEF", "NAV", "MEDIA", "NUM", "SYM", "FUN", "MOUSE"];
+
+    order.forEach((name, i) => {
+      const btn = document.createElement("button");
+      btn.textContent = name;
+      btn.dataset.layer = name;
+      if (i === 0) btn.classList.add("active");
+      btn.onclick = () => {
+        document.querySelectorAll(".tabs button").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".board").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("board-" + name).classList.add("active");
+      };
+      tabs.appendChild(btn);
+
+      const data = layers[name];
+      const el = document.createElement("div");
+      el.className = "board" + (i === 0 ? " active" : "");
+      el.id = "board-" + name;
+      el.innerHTML = `
+        <p class="how">${data.how}</p>
+        <div class="kb"><div class="rows">${data.rows.map(renderRow).join("")}</div></div>
+        <div class="legend">
+          <span class="l-hold">hold → mod / action</span>
+          <span class="l-mod">modifier / AltGr</span>
+          <span class="l-layer">layer thumb</span>
+          <span class="l-thumb">thumb cluster</span>
+        </div>
+        ${name === "DEF" || name === "FUN" ? `<div class="combos">${combos.map(([a,b]) => `<div><strong>${a}</strong> → ${b}</div>`).join("")}</div>` : ""}
+      `;
+      boards.appendChild(el);
+    });
+  </script>
+</body>
+</html>
