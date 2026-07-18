@@ -30,12 +30,17 @@ gh run download <run-id> -R jborkowski/zmk-config \
 
 **Option B — GitHub UI:** Actions → latest successful **Build** run → Artifacts.
 
-Look for Aurora Sweep artifact folders (each contains `zmk.uf2`), e.g.:
+Look for Aurora Sweep UF2s under `firmware-artifacts/firmware/` (or the Actions artifact zip):
 
-- `splitkb_aurora_sweep_left-nice_nano-zmk/zmk.uf2`
-- `splitkb_aurora_sweep_right-nice_nano-zmk/zmk.uf2`
+- `splitkb_aurora_sweep_left-nice_nano__zmk-zmk.uf2`
+- `splitkb_aurora_sweep_right-nice_nano__zmk-zmk.uf2`
 
-> Exact artifact folder names may vary slightly; match `*aurora_sweep_left*` / `*aurora_sweep_right*`.
+Latest successful build: https://github.com/jborkowski/zmk-config/actions/runs/29640814207
+
+Local copies (already downloaded):
+
+- `/Users/jonatan/sources/zmk-config/firmware-artifacts/firmware/splitkb_aurora_sweep_left-nice_nano__zmk-zmk.uf2`
+- `/Users/jonatan/sources/zmk-config/firmware-artifacts/firmware/splitkb_aurora_sweep_right-nice_nano__zmk-zmk.uf2`
 
 ---
 
