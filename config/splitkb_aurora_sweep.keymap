@@ -40,8 +40,8 @@
       display-name = "DEF";
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp G            &kp J         &kp L          &kp U          &kp Y            &kp BSPC
-      &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp D            &kp H         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O
-      &kp Z         &hm_o RALT X  &hm_o U_CPY C  &kp V          &hm_o U_PST B    &kp K         &kp M          &kp COMMA      &hm_o RALT DOT   &kp FSLH
+      &hml LGUI A   &hml LALT R   &hml LCTL S    &hml LSHFT T   &kp D            &kp H         &hmr RSHFT N   &hmr RCTL E    &hmr LALT I      &hmr RGUI O
+      &kp Z         &hm_o RALT X  &kp C          &kp V          &kp B            &kp K         &kp M          &kp COMMA      &hm_o RALT DOT   &kp FSLH
                                                  &lt SYM TAB  &lt NAV SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };

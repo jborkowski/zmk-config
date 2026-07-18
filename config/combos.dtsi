@@ -38,7 +38,6 @@
 
     COMBO(excl,   &kp EXCL,      LT2 LT1,     SYM,          40, 100)
 
-    COMBO(m,      &kp M,         RB1 RB2,     DEF,          80,  50)
     COMBO(slsh,   &kp SLASH,     RB2 RB3,     DEF ,      40,  50)
 
     #ifdef KYRIA
