@@ -84,7 +84,7 @@ Keymap: `config/splitkb_aurora_sweep.keymap`
 
 | Check | How |
 |-------|-----|
-| **Colemak-DH (DEF)** | Top row starts `Q W F P B` — type a few words. |
+| **Colemak-DH (DEF)** | Top row `Q W F P B`; home row plain letters (no home-row mods). |
 | **SYM** | Hold thumb **Tab** key (left inner thumb). |
 | **NAV** | Hold thumb **Space** (left outer thumb). |
 | **MEDIA** | Hold thumb **Esc** (right inner thumb). |
@@ -92,7 +92,7 @@ Keymap: `config/splitkb_aurora_sweep.keymap`
 | **MOUSE** (conditional) | Hold **SYM + NUM** together → pointer layer (`mkp` / `mmv` / `msc`). |
 | **FUN** (conditional) | Hold **NAV + MEDIA** together → F-keys, **BT_SEL** / **BT_CLR**, bootloader reset. |
 
-Home-row mods (`hm_o`, `hm_m`, `hm_i`) and combos/macros come from shared `behaviors.dtsi` / `combos.dtsi` — no need to test every binding on first flash.
+Combos/macros come from shared `combos.dtsi` / `macros.dtsi`. Mods live on NAV/MEDIA layers (and SYM right-hand).
 
 ---
 
