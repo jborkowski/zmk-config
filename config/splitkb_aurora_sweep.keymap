@@ -41,7 +41,7 @@
       bindings = <
       &kp Q         &kp W         &kp F          &kp P          &kp G            &kp J         &kp L          &kp U          &kp Y            &kp BSPC
       &hm_o LGUI A  &hm_o LALT R  &hm_m LCTL S   &hm_i LSHFT T  &kp D            &kp H         &hm_i RSHFT N  &hm_m RCTL E   &hm_o LALT I     &hm_o RGUI O
-      &kp Z         &hm_o RALT X  &hm_o U_CPY C  &kp V          &hm_o U_PST B    &kp K         &kp M          &kp COMMA      &hm_o RALT DOT   &kp FSLH
+      &kp Z         &mt RALT X    &hm_o U_CPY C  &kp V          &hm_o U_PST B    &kp K         &kp M          &kp COMMA      &mt RALT DOT    &kp FSLH
                                                  &lt SYM TAB  &lt NAV SPC        &lt MEDIA ESC &lt NUM RET
       >;
     };
@@ -50,8 +50,8 @@
       display-name = "NAV";
       bindings = <
       &trans    &trans    &trans     &trans     &kp U_PST &kp U_RDO  &none      &kp U_CPY  &kp U_CUT  &kp U_UND
-      &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
-      &none     &kp RALT  &trans     &none      &none     &none      &kp PG_DN  &kp PG_UP  &kp END    &none
+      &kp LGUI  &sk LALT  &kp LCTRL  &kp LSHFT  &trans    &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
+      &none     &sk RALT  &trans     &none      &none     &none      &kp PG_DN  &kp PG_UP  &kp END    &none
                                      &trans     &trans    &trans     &trans
       >;
     };
